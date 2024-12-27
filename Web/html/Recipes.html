@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/solar/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="Index.html">SuperCook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="foods.html">Foods</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="purchases.html">Purchases</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="recipes.html">Recipes</a>
+      </li>
+    </ul>
+    <span class="navbar-text" id="loginStatus">Not logged in</span>
+    <button class="btn btn-outline-danger ml-2" id="logoutButton" style="display: none;">Logout</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h1>Recipes</h1>
+  <button class="btn btn-primary mb-3" onclick="window.location.href='NewRecipe.html'"><i class="fas fa-plus"></i> Add Recipe</button>
+
+  <form id="filterForm" class="mb-4">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="filterMealTime">Meal Time</label>
+        <select class="form-control" id="filterMealTime" >
+          <option value="all">All</option>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="snack">Snack</option>
+          <option value="dinner">Dinner</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="type">Ingredient Type</label>
+        <select class="form-control" id="type" name="type">
+          <option value="">All</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="fruits">Fruits</option>
+            <option value="cheeses">Cheeses</option>
+            <option value="dairy">Dairy</option>
+            <option value="meats">Meats</option>
+
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="filterProductName">Ingredient Name</label>
+        <input type="text" class="form-control" id="filterProductName" placeholder="Enter ingredient name" onchange="filterRecipes()" >
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="filterRecipes()">Filter</button>
+  </form>
+
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Meal Time</th>
+      <th>Ingredients</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="recipeList">
+    <!-- Recipe items will be dynamically inserted here -->
+    </tbody>
+  </table>
+  <ul id="pagination" class="pagination justify-content-center"></ul> <!-- Added pagination container -->
+</div>
+
+<script src="js/recipe.js"></script>
+<script src="js/request.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

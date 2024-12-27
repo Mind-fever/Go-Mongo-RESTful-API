@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Recipe</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/solar/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">SuperCook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="foods.html">Foods</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="purchases.html">Purchases</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="recipes.html">Recipes</a>
+      </li>
+    </ul>
+    <span class="navbar-text" id="loginStatus">Not logged in</span>
+    <button class="btn btn-outline-danger ml-2" id="logoutButton" style="display: none;">Logout</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h1>Update Recipe</h1>
+  <form id="recipeForm">
+    <div class="form-group">
+      <label for="recipeName">Recipe Name</label>
+      <input type="text" class="form-control" id="recipeName" placeholder="Enter recipe name">
+    </div>
+    <div class="form-group">
+      <label for="mealTime">Meal Time</label>
+      <select class="form-control" id="mealTime">
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="snack">Snack</option>
+        <option value="dinner">Dinner</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Ingredients</label>
+      <div class="row">
+        <div class="col-md-5">
+          <h4>Recipe Foods</h4>
+          <ul class="list-group" id="recipeFoods">
+            <!-- Recipe foods will be dynamically inserted here -->
+          </ul>
+        </div>
+        <div class="col-md-2 text-center">
+          <button type="button" class="btn btn-success mb-2" onclick="addFood()"><i class="fas fa-arrow-left"></i></button>
+          <button type="button" class="btn btn-danger" onclick="removeFood()"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="col-md-5">
+          <h4>User Foods</h4>
+          <ul class="list-group" id="userFoods">
+            <!-- User foods will be dynamically inserted here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Recipe</button>
+  </form>
+</div>
+
+<script src="js/updaterecipe.js"></script>
+<script src="js/request.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

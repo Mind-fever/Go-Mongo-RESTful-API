@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Food</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/solar/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">SuperCook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="foods.html">Foods</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="purchases.html">Purchases</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="recipes.html">Recipes</a>
+      </li>
+    </ul>
+    <span class="navbar-text" id="loginStatus">Not logged in</span>
+    <button class="btn btn-outline-danger ml-2" id="logoutButton" style="display: none;">Logout</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h1>Update Food</h1>
+  <form id="updateFoodForm">
+    <div class="form-group">
+      <label for="foodName">Name</label>
+      <input type="text" class="form-control" id="foodName" name="foodName" placeholder="Enter food name" >
+    </div>
+    <div class="form-group">
+      <label for="foodType">Type</label>
+      <select class="form-control" id="foodType" name="foodType" >
+        <option value="vegetables">Vegetables</option>
+        <option value="fruits">Fruits</option>
+        <option value="cheeses">Cheeses</option>
+        <option value="dairy">Dairy</option>
+        <option value="meats">Meats</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pricePerUnit">Price Per Unit</label>
+      <input type="number" class="form-control" id="pricePerUnit" name="pricePerUnit" placeholder="Enter price per unit" >
+    </div>
+    <div class="form-group">
+      <label for="currentQuantity">Current Quantity</label>
+      <input type="number" class="form-control" id="currentQuantity" name="currentQuantity" placeholder="Enter current quantity" >
+    </div>
+    <div class="form-group">
+      <label for="minQuantity">Min Quantity</label>
+      <input type="number" class="form-control" id="minQuantity" name="minQuantity" placeholder="Enter minimum quantity" >
+    </div>
+    <div class="form-group">
+      <label>Meal Times</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="mealTimeBreakfast" name="mealTimes" value="breakfast">
+        <label class="form-check-label" for="mealTimeBreakfast">Breakfast</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="mealTimeLunch" name="mealTimes" value="lunch">
+        <label class="form-check-label" for="mealTimeLunch">Lunch</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="mealTimeSnack" name="mealTimes" value="snack">
+        <label class="form-check-label" for="mealTimeSnack">Snack</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="mealTimeDinner" name="mealTimes" value="dinner">
+        <label class="form-check-label" for="mealTimeDinner">Dinner</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Food</button>
+  </form>
+</div>
+
+
+<script src="js/updatefood.js"></script>
+<script src="js/request.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

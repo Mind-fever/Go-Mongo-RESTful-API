@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Recipe</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/solar/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="Index.html">SuperCook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="foods.html">Foods</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="purchases.html">Purchases</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="recipes.html">Recipes</a>
+      </li>
+    </ul>
+    <span class="navbar-text" id="loginStatus">Not logged in</span>
+    <button class="btn btn-outline-danger ml-2" id="logoutButton" style="display: none;">Logout</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h1>Add Recipe</h1>
+  <form id="recipeForm">
+    <div class="form-group">
+      <label for="recipeName">Recipe Name</label>
+      <input type="text" class="form-control" id="recipeName" name="recipeName" placeholder="Enter recipe name" >
+    </div>
+    <div class="form-group">
+      <label for="mealTime">Meal Time</label>
+      <select class="form-control" id="mealTime" name="mealTime" >
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="snack">Snack</option>
+        <option value="dinner">Dinner</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Available Foods</label>
+      <ul class="list-group" id="availableFoods"></ul>
+      <nav>
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+      </nav>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-primary" id="addFood">Add Food</button>
+      <button type="button" class="btn btn-danger" id="removeFood">Remove all </button>
+    </div>
+    <div class="form-group">
+      <label>Selected Ingredients</label>
+      <table class="table table-dark">
+        <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="ingredientList">
+        <!-- Ingredients will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Recipe</button>
+  </form>
+</div>
+
+<script src="js/newrecipe.js"></script>
+<script src="js/request.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

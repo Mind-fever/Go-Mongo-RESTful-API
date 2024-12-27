@@ -1,0 +1,4 @@
+NOTAS
+Los metodos de servicio y repositorio no deberian llamarse Get y Post sino tener nombres mas descriptivos
+
+NO es necesario que en todos los JS revisen el token de auth ya que lo hace request.js cuando hacen cualquier solicitud al backend
